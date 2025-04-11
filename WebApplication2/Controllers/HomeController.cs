@@ -18,26 +18,42 @@ namespace WebApplication2.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         public IActionResult Course()
         {
-            return View();
+            CourseViewModel resp = new CourseViewModel();
+            using (var db = new StudInfoSys1Context())
+            {
+                resp.Courses = db.Courses.ToList();
+            }
+            return View(resp);
         }
         public IActionResult Section()
         {
-            return View();
+            SectionViewModel resp = new SectionViewModel();
+            using (var db = new StudInfoSys1Context())
+            {
+                resp.Sections = db.Sections.ToList();
+            }
+            return View(resp);
         }
         public IActionResult Room()
         {
-            return View();
+            RoomViewModel resp = new RoomViewModel();
+            using (var db = new StudInfoSys1Context())
+            {
+                resp.Rooms = db.Rooms.ToList();
+            }
+            return View(resp);
         }
         public IActionResult Teacher()
         {
-            return View();
+            TeacherViewModel resp = new TeacherViewModel();
+            using (var db = new StudInfoSys1Context())
+            {
+                resp.Teachers = db.Teachers.ToList();
+            }
+            return View(resp);
         }
+
     }
 }

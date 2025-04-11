@@ -1,10 +1,32 @@
-﻿<h3>Teacher</h3>
+﻿@model TeacherViewModel
+<h3>Teacher</h3>
 <table>
-    <tr>
-        <td>Teacher ID</td>
-    </tr>
-    <tr>
-        <td>Teacher Name</td>
-    </tr>
+    <thead>
+        <tr>
+            <th>Teacher ID</th>
+            <th>Teacher Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var row in Model.Teachers)
+        {
+            <tr>
+                <td>@row.TeacherID</td>
+                <td>@row.TeacherName</td>
+            </tr>
+        }
+    </tbody>
 
 </table>
+
+<style>
+    table, th, td {
+        border: solid 1px black;
+        padding: 5px;
+    }
+
+    thead {
+        background-color: azure;
+    }
+</style>

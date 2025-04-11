@@ -1,14 +1,34 @@
-﻿<h3>Student</h3>
-
+﻿@model StudentViewModel
+<h3>Student</h3>
 <table>
-    <tr>
-        <td>Student ID</td>
-    </tr>
-    <tr>
-        <td>First Name</td>
-    </tr>
-    <tr>
-        <td>Last Name</td>
-    </tr>
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var row in Model.Students)
+        {
+            <tr>
+                <td>@row.StudentID</td>
+                <td>@row.FirstName</td>
+                <td>@row.LastName</td>
+            </tr>
+        }
+    </tbody>
+
 </table>
 
+<style>
+    table, th, td {
+        border: solid 1px black;
+        padding: 5px;
+    }
+
+    thead {
+        background-color: azure;
+    }
+</style>

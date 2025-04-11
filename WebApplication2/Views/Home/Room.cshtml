@@ -1,10 +1,35 @@
-﻿<h3>Room</h3>
+﻿@model RoomViewModel
+<h3>Room</h3>
 <table>
-    <tr>
-        <td>Room ID</td>
-    </tr>
-    <tr>
-        <td>Room Name</td>
-    </tr>
+    <thead>
+        <tr>
+            <th>Room ID</th>
+            <th>Room Name</th>
+            <th>Section Name</th>
+            <th>Course Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var row in Model.Rooms)
+        {
+            <tr>
+                <td>@row.RoomID</td>
+                <td>@row.RoomName</td>
+                <td>@row.SectionName</td>
+                <td>@row.CourseName</td>
+            </tr>
+        }
+    </tbody>
 
 </table>
+
+<style>
+    table,th,td{
+        border: solid 1px black;
+        padding: 5px;
+    }
+    thead{
+        background-color: azure;
+    }
+</style>

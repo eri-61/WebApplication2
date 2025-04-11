@@ -1,11 +1,30 @@
-﻿<h3>Course</h3>
+﻿@model CourseViewModel
+<h3>Course</h3>
 
 <table>
-    <tr>
-        <td>Course ID</td>
-    </tr>
-    <tr>
-        <td>Course Name</td>
-    </tr>
+    <thead>
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var row in Model.Courses)
+        {
+            <tr>
+                <td>@row.CourseID</td>
+                <td>@row.CourseName</td>
+            </tr>    
+        }
+    </tbody>
 </table>
+<style>
+    table, th, td {
+        border: solid 1px black;
+        padding: 5px;
+    }
 
+    thead {
+        background-color: azure;
+    }
+</style>
