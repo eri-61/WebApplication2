@@ -54,6 +54,16 @@ namespace WebApplication2.Controllers
             }
             return View(resp);
         }
+        public IActionResult Student()
+        {
+            StudentViewModel resp = new StudentViewModel();
+            using (var db = new StudInfoSys1Context())
+            {
+                resp.Students = db.Students.ToList();
+            }
+            return View(resp);
+        }
+
 
     }
 }
