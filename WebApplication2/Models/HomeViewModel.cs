@@ -2,6 +2,6 @@
 {
     public class HomeViewModel
     {
-        public List<string> Photos { get; set; }
+
     }
 }
